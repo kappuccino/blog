@@ -1,6 +1,5 @@
 ## The egg before the chicken, so vuejs before nuxt... what the eck is vuejs ?
 
-You would probably have heard about vuejs, at some point, from a google query, a colleague... 
 The recent trend is all about template rendering in the browser. No more remote server dumping full page for your browser. Nowadays your browser execute a recipe and literally build the page from the ground up.
 
 Vuejs is a tool helping you to display stuff on the screen.
@@ -18,10 +17,12 @@ The alternative is to do the job on the server side: you click on a link, you se
 
 A simple Vuejs app is barrely empty. All you need is a mounting point, a tag on the page where you will *inject* your app.
 
-`<body>
+```
+<body>
 	<div id="app"></div>
 	<script src="app.js" />
-</body>`
+</body>
+```
 
 This is all you need. This is simple HTML, your browser will deal with the rest, this simple structure is all it need to boot your app... but this is also what search engine bots will see too, and this page holds no data. This is a big deal because most of them will take the code you gave them to extract some meaning full information. (I know SEO bots are not that dumb, and some of theme could run js code to display the page, but for the sake of this article I will assume they only see what you give to them). 
 
@@ -29,7 +30,8 @@ So, this is a pretty bad code if you want to land on the first page of google ! 
 
 We need to find a way to display the page with all the data structured by HTML tags. some thing like
 
-`<body>
+```
+<body>
 	<div id="app">
 		<h1>People I love</h1>
 		<ul>
@@ -38,17 +40,19 @@ We need to find a way to display the page with all the data structured by HTML t
 			<li>Netflix</li>
 		</ul>
 	</div>
-</body>`
+</body>
+```
 
 **Nuxt core idea is to give, *whoever ask*, the *final render* of a page and *all the browser needs* to update the page after the first render has occured.**
 
 If this is hard to swallow, let me split this in simpler words
 
-	* whoever ask: for a given URL, your browser, a SEO bot, a facebook linter, or a bash script, they will all received a well formated page with markup.
+* **whoever ask**: for a given URL, your browser, a SEO bot, a facebook linter, or a bash script, they will all received a well formated page with markup.
 
-	* final render: this output is the last step of maybe some calculation like ordering or whatever data transformation was needed
 
-	* all the browser need to update the page: the HTML page will also have some JS instructions to do some extra work once the page is displayed (like ordering a list when a button is pressed)
+* **final render**: this output is the last step of maybe some calculation like ordering or whatever data transformation was needed
+
+* **all the browser need to update the page**: the HTML page will also have some JS instructions to do some extra work once the page is displayed (like ordering a list when a button is pressed)
 
 You can also think like:
 I will render a page with all the data to display into (html markup) and the logic to update the layout when I will need to (javascript) the user will not see a blank page very quick and the data after that, this will be a simple boring HTML page.
@@ -116,6 +120,7 @@ Also, if you expose your own data throught api, this will be easy to test with u
 
 ## What now ?
 I have now built a couple of website using nuxt now and I have really loved it. I encourage everyone to try to build a little somthing with it to forge your own opinion. Sure, haters will always find something to say, and nuxt is not for everyone — I got it.
+
 I highly recommand to give a try. Nuxt is very powerfull. As a lot of good intentions wrap its core, you will feel at ease rapidly. Sure, if you already know vuejs (even a little bit of) you will be at ease with nuxt, but the tree structure of a default nuxt project is simple enough to help you write a couple of page and component.
 
 
